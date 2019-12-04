@@ -15,6 +15,10 @@ public class Main {
         System.out.println(FirstTask.decimalToBinary(100));
         System.out.println(FirstTask.decimalToOctal(100));
         System.out.println(FirstTask.decimalToHex(100));
+
+
+        System.out.println(FirstTask.perfectNumbers(10000));
+
     }
 
     public static void print2D(int mat[][]) {

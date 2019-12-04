@@ -34,6 +34,12 @@ public class FirstTaskTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void testPerfectNumbers(){
+        String result = FirstTask.perfectNumbers(10000);
+        System.out.println("Expected results: "+ "6;28;496;8128;" + "Actual results: " + result);
+        Assert.assertEquals("6;28;496;8128;", result);
+    }
 
     @Test
     public void testDecimalToHex(){

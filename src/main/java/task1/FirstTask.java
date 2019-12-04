@@ -42,13 +42,25 @@ public class FirstTask {
        return  result;
     }
 
+    public static String perfectNumbers(int bound){
+        String result = "";
+        for (int i = 1; i<bound; i++)
+        {
+            int sum = 0;
+            for (int j  = 1; j<i; j++)
+            {
+                if (i%j == 0)
+                    sum = sum + j;
+            }
+            if (i == sum)
+               result = result + i + ";";
+
+        }
+        return result;
+    }
+
     public static int[][][]transposeMatrix(int dimension){
         Random random = new Random();
-
-        /*int[][] test = {{1,2,3},
-                         {4,5,6},
-                         {7,8,9}
-        };*/
 
         //matrix initialization
         int[][] result = new int[dimension][dimension];
