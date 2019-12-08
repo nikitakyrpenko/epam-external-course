@@ -8,8 +8,8 @@ public class Main {
 
         int shapeAmount = 10;
 
-        String[] colors = InputUtility.generateShapeColor(shapeAmount);
-        double[] dimensions = InputUtility.generateShapeDimensions(shapeAmount);
+        String[] colors = InputUtility.generateShapeColor(100);
+        double[] dimensions = InputUtility.generateShapeDimensions(50);
 
         ShapeController shapeController = new ShapeController(shapeAmount, colors, dimensions);
         shapeController.reply();
