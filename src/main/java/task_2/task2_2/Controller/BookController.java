@@ -99,10 +99,5 @@ public class BookController {
         }
     }
 
-    /*
-        bookView.printMessage("", bookModel.getBooksByAuthor(authors[pickRandom(authors.length)]));
-        bookView.printMessage("", bookModel.getBooksByPublisher(publishers[pickRandom(publishers.length)]));
-        bookView.printMessage("", bookModel.getBooksPublishedLaterThan(yearsOfPublish[pickRandom(yearsOfPublish.length)]));
-        bookView.printMessage("", bookModel.sortByPublisher());
-     */
+
 }
