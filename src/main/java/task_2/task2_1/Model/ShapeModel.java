@@ -36,7 +36,7 @@ public class ShapeModel {
 
     public String sortByShapeColor(){
         String result = "";
-        Shape[] shapesCopy = shapes;
+        Shape[] shapesCopy = Arrays.copyOf(shapes, shapes.length);
         Arrays.sort(shapesCopy, Shape.getShapeColorComparator());
         for (Shape shape: shapesCopy)
             result = result + shape.draw() + '\n';
@@ -46,7 +46,7 @@ public class ShapeModel {
 
     public String sortByShapeArea(){
         String result = "";
-        Shape[] shapesCopy = shapes;
+        Shape[] shapesCopy = Arrays.copyOf(shapes, shapes.length);
         Arrays.sort(shapesCopy, Shape.getShapeAreaComparator());
         for (Shape shape: shapesCopy)
             result = result + shape.draw() + '\n';
