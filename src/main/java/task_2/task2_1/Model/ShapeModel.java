@@ -20,14 +20,14 @@ public class ShapeModel {
     }
 
     public String getTotalShapesArea(){
-        double result = 0;
+        double result = 0.0;
         for (Shape shape: shapes)
             result = result + shape.calcArea();
         return Double.toString(result);
     }
 
     public String getTotalShapesAreaOfClass(Class shapeClass){
-        double result = 0;
+        double result = 0.0;
         for (Shape shape: shapes)
             if (shape.getClass() == shapeClass)
                 result = result + shape.calcArea();

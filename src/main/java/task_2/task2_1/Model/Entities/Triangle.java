@@ -14,7 +14,7 @@ public class Triangle extends Shape {
 
     @Override
     public double calcArea() {
-        double halfPerimeter = (a + b + c) / 2;
+        double halfPerimeter = (a + b + c) / 2.0;
         return Math.sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
     }
 
@@ -23,7 +23,5 @@ public class Triangle extends Shape {
         return super.toString() + "; a= "+ a + "; b=" + b + "; c= " + c;
     }
 
-    public String draw() {
-        return this.toString() + "; area= "+calcArea();
-    }
+
 }

@@ -24,8 +24,11 @@ public abstract class Shape implements Drawable{
         return new ShapeAreaComparator();
     }
 
+
     @Override
     public String toString(){ return getClass().getSimpleName() + "; shapeColor= "+shapeColor; }
+
+    public String draw() { return this.toString() + "; area= " + calcArea(); }
 
 
     private static class ShapeColorComparator implements Comparator{

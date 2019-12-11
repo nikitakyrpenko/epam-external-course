@@ -23,5 +23,5 @@ public class Rectangle extends Shape {
     @Override
     public String toString() { return super.toString() + "; w= "+ w + "; h= "+h; }
 
-    public String draw() { return this.toString() + "; area= " + calcArea(); }
+
 }
