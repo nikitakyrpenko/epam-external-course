@@ -1,4 +1,4 @@
-package task_2.task2_2.View;
+package task_2.task2_2.view;
 
 public class BookView {
 

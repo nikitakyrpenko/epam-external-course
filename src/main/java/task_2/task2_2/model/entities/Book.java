@@ -1,4 +1,4 @@
-package task_2.task2_2.Model.Entities;
+package task_2.task2_2.model.entities;
 
 import java.math.BigDecimal;
 import java.util.Comparator;
