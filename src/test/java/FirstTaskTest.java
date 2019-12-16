@@ -2,8 +2,8 @@
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import task_1.FirstTask;
-import task_1.Main;
+import task1.FirstTask;
+import task1.Main;
 
 import java.util.Random;
 
