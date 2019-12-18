@@ -11,9 +11,7 @@ public class Book {
     private int amountOfPages;
     private BigDecimal price;
 
-    public static BookPublisherComparator getBookPublisherComparator(){
-        return new BookPublisherComparator();
-    }
+
 
     public Book(String title, String author, String publisher, int yearOfPublish, int amountOfPages, BigDecimal price) {
         this.title = title;
@@ -86,11 +84,5 @@ public class Book {
                 "}\n";
     }
 
-    private static class BookPublisherComparator implements Comparator{
-        public int compare(Object o1, Object o2) {
-            Book b1 = (Book) o1;
-            Book b2 = (Book) o2;
-            return b1.publisher.hashCode() - b2.publisher.hashCode();
-        }
-    }
+
 }

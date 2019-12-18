@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class ShapeController {
 
-    private ShapeModel shapeModel;
+    private ShapeModel<Shape> shapeModel;
     private ShapeView shapeView;
 
 

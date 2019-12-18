@@ -3,15 +3,16 @@ package task2.task2_2.model;
 import task2.task2_2.model.entities.Book;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
-public class BookModel {
-    private Book[] books;
+public class BookModel<T extends Book> {
+    private T[] books;
 
-    public BookModel(Book[] books){
+    public BookModel(T[] books){
         this.books = books;
     }
 
-    public Book[] getBooks() { return books; }
+    public T[] getBooks() { return books; }
 
     public Book[] getBooksByAuthor(String author){
         int count = 0;
@@ -63,7 +64,12 @@ public class BookModel {
 
     public Book[] sortByPublisher(){
         Book[] copyOfBooks = Arrays.copyOf(books,books.length);
-        Arrays.sort(copyOfBooks, Book.getBookPublisherComparator());
+        Arrays.sort(copyOfBooks, new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                return o1.getPublisher().hashCode() - o2.getPublisher().hashCode();
+            }
+        });
         return copyOfBooks;
     }
 

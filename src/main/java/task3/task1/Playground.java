@@ -24,13 +24,23 @@ public class Playground <T extends Toy> {
 
     public T[] getToysSortedByPrice(){
         T[] copy = Arrays.copyOf(toys,toys.length);
-        Arrays.sort(copy, new ToyPriceComparator());
+        Arrays.sort(copy, new Comparator<T>() {
+            @Override
+            public int compare(T o1, T o2) {
+                return o1.getPrice().compareTo(o2.getPrice());
+            }
+        });
         return copy;
     }
 
     public T[] getToysSortedByOwnerGender(){
         T[] copy = Arrays.copyOf(toys, toys.length);
-        Arrays.sort(copy, new ToyGenderComparator());
+        Arrays.sort(copy, new Comparator<T>() {
+            @Override
+            public int compare(T o1, T o2) {
+                return o1.getOwner().compareTo(o2.getOwner());
+            }
+        });
         return copy;
     }
     public Toy[] getToysFilteredByPrice(BigDecimal price){
@@ -62,21 +72,4 @@ public class Playground <T extends Toy> {
 
         return result;
     }
-
-
-
-    private class ToyPriceComparator implements Comparator<T>{
-        @Override
-        public int compare(T o1, T o2) {
-            return o1.getPrice().compareTo(o2.getPrice());
-        }
-    }
-
-    private class ToyGenderComparator implements Comparator<T>{
-        @Override
-        public int compare(T o1, T o2) {
-            return o1.getOwner().compareTo(o2.getOwner());
-        }
-    }
-
 }

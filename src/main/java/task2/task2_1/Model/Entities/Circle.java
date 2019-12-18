@@ -24,4 +24,8 @@ public class Circle extends Shape {
     }
 
 
+    public static Circle parseString(String data){
+        String[] tokens = data.split("[:,]]");
+        return new Circle(tokens[1], Double.parseDouble(tokens[2]));
+    }
 }
