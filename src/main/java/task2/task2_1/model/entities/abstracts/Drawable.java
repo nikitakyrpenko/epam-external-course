@@ -1,4 +1,4 @@
-package task2.task2_1.Model.Entities.Abstract;
+package task2.task2_1.model.entities.abstracts;
 
 public interface Drawable {
 

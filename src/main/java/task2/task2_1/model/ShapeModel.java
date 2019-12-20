@@ -1,6 +1,6 @@
-package task2.task2_1.Model;
+package task2.task2_1.model;
 
-import task2.task2_1.Model.Entities.Abstract.Shape;
+import task2.task2_1.model.entities.abstracts.Shape;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -36,25 +36,19 @@ public class ShapeModel<T extends Shape> {
         return Double.toString(result);
     }
 
-    public String sortByShapeColor(){
+    public Shape[] sortByShapeColor(){
         String result = "";
         T[] shapesCopy = Arrays.copyOf(shapes, shapes.length);
         Arrays.sort(shapesCopy, new Comparator<Shape>() {
             @Override
             public int compare(Shape o1, Shape o2) {
-                long s1ColorValue = Long.parseLong(o1.getShapeColor().substring(1),16);
-                long s2ColorValue = Long.parseLong(o2.getShapeColor().substring(1),16);
-                return (int) (s1ColorValue - s2ColorValue);
+                return o1.getShapeColor().compareTo(o2.getShapeColor());
             }
         });
-        for (Shape shape: shapesCopy)
-            result = result + shape.draw() + '\n';
-
-        return result;
+        return shapesCopy;
     }
 
-    public String sortByShapeArea(){
-        String result = "";
+    public Shape[] sortByShapeArea(){
         T[] shapesCopy = Arrays.copyOf(shapes, shapes.length);
         Arrays.sort(shapesCopy, new Comparator<Shape>() {
             @Override
@@ -62,9 +56,6 @@ public class ShapeModel<T extends Shape> {
                 return (int) (o1.calcArea() - o2.calcArea());
             }
         });
-        for (Shape shape: shapesCopy)
-            result = result + shape.draw() + '\n';
-
-        return result;
+        return shapesCopy;
     }
 }

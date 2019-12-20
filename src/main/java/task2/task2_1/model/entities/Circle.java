@@ -1,6 +1,6 @@
-package task2.task2_1.Model.Entities;
+package task2.task2_1.model.entities;
 
-import task2.task2_1.Model.Entities.Abstract.Shape;
+import task2.task2_1.model.entities.abstracts.Shape;
 
 public class Circle extends Shape {
 
@@ -12,8 +12,6 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public double getRadius(){ return radius;}
-    public void setRadius(double radius){this.radius = radius;}
 
     @Override
     public double calcArea() { return PI * radius * radius; }
@@ -25,7 +23,7 @@ public class Circle extends Shape {
 
 
     public static Circle parseString(String data){
-        String[] tokens = data.split("[:,]]");
+        String[] tokens = data.split("[:,]");
         return new Circle(tokens[1], Double.parseDouble(tokens[2]));
     }
 }

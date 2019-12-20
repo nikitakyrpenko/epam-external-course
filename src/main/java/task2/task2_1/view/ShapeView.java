@@ -1,4 +1,4 @@
-package task2.task2_1.View;
+package task2.task2_1.view;
 
 public class ShapeView {
 
