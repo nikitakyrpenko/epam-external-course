@@ -1,9 +1,8 @@
+package task1;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import task1.FirstTask;
-import task1.Main;
 
 import java.util.Random;
 
