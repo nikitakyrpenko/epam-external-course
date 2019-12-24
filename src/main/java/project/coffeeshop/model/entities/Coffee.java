@@ -7,7 +7,6 @@ public  abstract  class Coffee {
     private CoffeeConditions coffeeCondition;
     private CoffeeWrap coffeeWrap;
 
-
     public Coffee (long price, CoffeeQualities coffeeQualities, CoffeeConditions coffeeConditions, CoffeeWrap coffeeWrap){
         this.price = price;
         this.coffeeCondition = coffeeConditions;
@@ -26,9 +25,15 @@ public  abstract  class Coffee {
 
     public abstract String getType();
 
+    public long getPrice(){ return price;}
+
+    public CoffeeWrap getCoffeeWrap() { return coffeeWrap; }
+
     public double getPriceVolumeRatio(){
         return price / coffeeWrap.getTotalVolume();
     }
+
+
 
         public enum CoffeeConditions{
             GRAIN,
@@ -44,20 +49,19 @@ public  abstract  class Coffee {
         }
 
         public enum CoffeeWrap{
-            PACKET(10,1),
-            JAR(15,3);
+            PACKET(0.2,0.05),
+            JAR(0.3,0.1);
 
-            private int coffeeVolume;
-            private int wrapVolume;
+            private double coffeeVolume;
+            private double wrapVolume;
 
-             CoffeeWrap(int coffeeVolume, int wrapVolume){
+             CoffeeWrap(double coffeeVolume, double wrapVolume){
                 this.coffeeVolume = coffeeVolume;
                 this.wrapVolume = wrapVolume;
             }
-
-            public int getCoffeeVolume(){return coffeeVolume;}
-            public int getWrapVolume(){return wrapVolume;}
-            public int getTotalVolume(){return coffeeVolume + wrapVolume;}
+            public double getTotalVolume(){return coffeeVolume + wrapVolume;}
         }
-    }
+
+
+}
 

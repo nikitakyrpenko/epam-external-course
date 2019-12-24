@@ -15,6 +15,6 @@ public class Robusta extends Coffee {
     @Override
     public String toString(){
         return super.toString() + ", coffeeType=" + type +
-                '}';
+                "}\n";
     }
 }
