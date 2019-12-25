@@ -1,6 +1,7 @@
-package project.coffeeshop;
-import static project.coffeeshop.Utils.*;
+package project.coffeeshop.controller;
+import static project.coffeeshop.util.Utils.*;
 
+import project.coffeeshop.model.CoffeeTypes;
 import project.coffeeshop.model.entities.Arabica;
 import project.coffeeshop.model.entities.Coffee;
 import project.coffeeshop.model.entities.Liberica;

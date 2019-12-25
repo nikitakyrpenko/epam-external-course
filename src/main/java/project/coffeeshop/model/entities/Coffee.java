@@ -1,5 +1,7 @@
 package project.coffeeshop.model.entities;
 
+import project.coffeeshop.model.CoffeeTypes;
+
 public  abstract  class Coffee {
 
     private long price;
@@ -23,7 +25,7 @@ public  abstract  class Coffee {
                 ", coffeeWrap=" + coffeeWrap;
     }
 
-    public abstract String getType();
+    public abstract CoffeeTypes getType();
 
     public long getPrice(){ return price;}
 

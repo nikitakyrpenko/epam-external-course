@@ -24,5 +24,24 @@ public class CoffeeModel<T extends Coffee> {
        return copy;
     }
 
+    public List<T> filterByPriceMoreThen(long price){
+        List<T> result = new ArrayList<>();
+        for(T t : coffees)
+            if (t.getPrice() > price)
+                result.add(t);
+         return result;
+    }
+    public List<T> filterByCoffeeSort(CoffeeTypes type){
+        List<T> result = new ArrayList<>();
+        for (T t : coffees)
+            if (t.getType().equals(type))
+                result.add(t);
+        return result;
+    }
 
+
+
+    public List<T> getCoffees() {
+        return coffees;
+    }
 }

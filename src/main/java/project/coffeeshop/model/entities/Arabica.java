@@ -1,16 +1,18 @@
 package project.coffeeshop.model.entities;
 
+import project.coffeeshop.model.CoffeeTypes;
+
 public class Arabica extends Coffee {
 
-    private String type;
+    private CoffeeTypes type;
 
     public Arabica(long price, CoffeeQualities coffeeQualities, CoffeeConditions coffeeConditions, CoffeeWrap coffeeWrap) {
         super(price, coffeeQualities, coffeeConditions, coffeeWrap);
-        this.type = "Arabica";
+        this.type = CoffeeTypes.ARABICA;
     }
 
     @Override
-    public final String getType() { return type; }
+    public final CoffeeTypes getType() { return type; }
 
     @Override
     public String toString(){

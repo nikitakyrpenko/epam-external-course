@@ -1,4 +1,4 @@
-package project.coffeeshop;
+package project.coffeeshop.util;
 
 import java.util.Random;
 
