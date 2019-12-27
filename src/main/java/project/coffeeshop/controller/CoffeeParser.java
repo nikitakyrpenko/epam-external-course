@@ -10,7 +10,7 @@ import project.coffeeshop.model.entities.Robusta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoffeeParser {
+public class CoffeeParser implements IParser {
 
     private long availableCosts;
     private double availableVolume;

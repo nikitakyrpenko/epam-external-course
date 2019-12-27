@@ -1,11 +1,12 @@
 package project.coffeeshop.model;
 
 import project.coffeeshop.model.entities.Coffee;
+import project.coffeeshop.model.entities.ComparableRatio;
 
 import java.util.*;
 
 
-public class CoffeeModel<T extends Coffee> {
+public class CoffeeModel<T extends Coffee & ComparableRatio> {
 
     List<T> coffees;
 
@@ -18,7 +19,7 @@ public class CoffeeModel<T extends Coffee> {
        Collections.sort(copy, new Comparator<T>() {
            @Override
            public int compare(T o1, T o2) {
-               return (int) (o1.getPriceVolumeRatio() - o2.getPriceVolumeRatio());
+               return (int) (o1.computeRatio() - o2.computeRatio());
            }
        });
        return copy;

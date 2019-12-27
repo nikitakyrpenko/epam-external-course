@@ -12,7 +12,7 @@ public class CoffeeController {
 
 
     public CoffeeController(long price, double volume){
-        CoffeeParser coffeeParser = new CoffeeParser(price, volume);
+        IParser coffeeParser = new CoffeeParser(price, volume);
         coffeeModel = new CoffeeModel<>(coffeeParser.parse());
         coffeeView = new CoffeeView();
 

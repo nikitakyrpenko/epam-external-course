@@ -2,7 +2,7 @@ package project.coffeeshop.model.entities;
 
 import project.coffeeshop.model.CoffeeTypes;
 
-public  abstract  class Coffee {
+public  abstract  class Coffee implements ComparableRatio{
 
     private long price;
     private CoffeeQualities coffeeQuality;
@@ -31,13 +31,13 @@ public  abstract  class Coffee {
 
     public CoffeeWrap getCoffeeWrap() { return coffeeWrap; }
 
-    public double getPriceVolumeRatio(){
-        return price / coffeeWrap.getTotalVolume();
+
+    @Override
+    public double computeRatio() {
+        return this.price / this.coffeeWrap.getTotalVolume();
     }
 
-
-
-        public enum CoffeeConditions{
+    public enum CoffeeConditions{
             GRAIN,
             GROUND,
             INSTANT;
