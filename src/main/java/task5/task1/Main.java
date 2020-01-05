@@ -6,6 +6,5 @@ public class Main {
     public static void main(String[] args) {
        RecordController recordController = new RecordController();
        recordController.doDialog();
-
     }
 }
