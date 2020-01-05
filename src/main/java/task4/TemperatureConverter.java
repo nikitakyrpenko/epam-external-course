@@ -17,8 +17,6 @@ package task4;
         public double convertFtoK(double degreesFahrenheit) {
             return (degreesFahrenheit + 459.7) / 9.0 * 5.0;
         }
-        public double convertKtoF(double kelvin) {
-            return kelvin / 5.0 * 9.0 - 459.7;
-        }
+        public double convertKtoF(double kelvin){ return kelvin / 5.0 * 9.0 - 459.7; }
 
 }
