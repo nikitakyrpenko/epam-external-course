@@ -9,11 +9,10 @@ import java.util.Scanner;
 public class Translator {
 
     public Map<String, String> words = new HashMap<>();
-    private File file;
     private Scanner scanner;
 
     public Translator(){
-        this.file = new File(System.getProperty("user.dir")+ "\\src\\main\\java\\task5\\task3\\words.txt");
+        File file = new File(System.getProperty("user.dir") + "\\src\\main\\java\\task5\\task3\\words.txt");
         try {
             this.scanner = new Scanner(file);
             readFromFile();
@@ -33,9 +32,9 @@ public class Translator {
         for (String txt : text) {
             String translatedWord = words.get(txt.toLowerCase());
             if (translatedWord != null)
-                stringBuilder.append(translatedWord + " ");
+                stringBuilder.append(translatedWord).append(" ");
             else
-                stringBuilder.append(txt + " ");
+                stringBuilder.append(txt).append(" ");
         }
         return stringBuilder.toString();
     }
