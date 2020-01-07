@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class InputUtility {
 
     private  Scanner scanner = new Scanner(System.in);
-    private Pattern pattern = Pattern.compile("^[1-9]+[\\s;,][0-9]+[\\s;,][0-9]+");
+    private Pattern pattern = Pattern.compile("^[0-9]+[\\s;,][0-9]+[\\s;,][0-9]+");
     private int amount;
     private int low;
     private int high;

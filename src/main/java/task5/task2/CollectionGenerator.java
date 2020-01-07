@@ -5,6 +5,7 @@ import java.util.*;
 public class CollectionGenerator{
 
     private Random random;
+    private InputUtility inputUtility;
     private int amount;
     private int low;
     private int high;
@@ -12,18 +13,24 @@ public class CollectionGenerator{
     private List<Number> list;
     private Set<Number> set;
 
-    public CollectionGenerator(int amount, int low , int high){
+    {
         this.random = new Random();
-        this.amount = amount;
-        this.low = low;
-        this.high = high;
+        this.inputUtility = new InputUtility();
+        inputUtility.getParameters();
+    }
+
+    public CollectionGenerator(){
+        this.amount = inputUtility.getAmount();
+        this.low = inputUtility.getLow();
+        this.high = inputUtility.getHigh();
+
         this.threshold = ((high - low) + 1) + low;
         this.list = generateList();
         this.set = generateSet();
     }
 
     public List<Number> generateList(){
-        List<Number> result = new ArrayList<>();
+        List<Number> result = new LinkedList<>();
         for (int i = 0; i < amount; i++){
             Number number = random.nextInt(threshold);
             result.add(number);
@@ -31,10 +38,10 @@ public class CollectionGenerator{
         return result;
     }
 
+
     public Set<Number> generateSet(){
         Set<Number> result = new HashSet<>();
         Set<Number> addedNumbers = new HashSet<>();
-
         int i = 0;
         while (i != amount){
             int number = random.nextInt(threshold);
