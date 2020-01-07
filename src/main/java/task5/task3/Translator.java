@@ -12,20 +12,18 @@ public class Translator {
     private File file;
     private Scanner scanner;
 
-    public Translator(File file) throws FileNotFoundException {
-        this.file = file;
-        this.scanner = new Scanner(file);
-        readFromFile();
-    }
-
-    public Translator() throws  FileNotFoundException{
+    public Translator(){
         this.file = new File(System.getProperty("user.dir")+ "\\src\\main\\java\\task5\\task3\\words.txt");
-        this.scanner = new Scanner(file);
-        readFromFile();
-    }
+        try {
+            this.scanner = new Scanner(file);
+            readFromFile();
+        }catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
 
+    }
     public void addWords(String eng, String russ) {
-        words.put(eng,russ);
+        words.put(eng.toLowerCase(),russ.toLowerCase());
     }
 
     public String translate(String line){
@@ -33,7 +31,7 @@ public class Translator {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (String txt : text) {
-            String translatedWord = words.get(txt);
+            String translatedWord = words.get(txt.toLowerCase());
             if (translatedWord != null)
                 stringBuilder.append(translatedWord + " ");
             else
