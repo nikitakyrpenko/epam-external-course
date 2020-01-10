@@ -1,13 +1,25 @@
 package task5.task4;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
-        RBTree<Integer, Integer> tree = new RBTree<>();
-        tree.add(3,3);
-        tree.add(2,2);
-        tree.add(1,1);
-        tree.add(7,7);
 
+        Map<Integer, Integer> numbers = new HashMap<>();
+
+        for (int i = 0 ; i < 10; i++ )
+            numbers.put(i,i);
+
+        RBTree<Integer, Integer> tree = new RBTree<>(numbers);
+
+        tree.postOrderTraversing();
+
+        tree.inOrderTraversing();
+
+        tree.preOrderTraversing();
 
 
 

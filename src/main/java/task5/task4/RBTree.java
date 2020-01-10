@@ -1,5 +1,8 @@
 package task5.task4;
 
+import java.util.List;
+import java.util.Map;
+
 public class RBTree<K extends Comparable<K>, V> {
 
     private static final boolean RED = true;
@@ -24,9 +27,11 @@ public class RBTree<K extends Comparable<K>, V> {
 
     private int size;
 
-    public RBTree() {
+    public RBTree(Map<K,V> entries) {
         root = null;
         size = 0;
+        for (K entry : entries.keySet())
+            this.add(entry, entries.get(entry));
     }
 
     private boolean isRed(Node node) {
@@ -172,6 +177,59 @@ public class RBTree<K extends Comparable<K>, V> {
             return successor;
 
         }
+    }
+    /*
+    * print left child
+    * print root
+    * print right child
+    */
+    private void inOrderTraversing(Node node) {
+        if (node != null) {
+            inOrderTraversing(node.left);
+            System.out.println("Node key : " + node.key + "; " + "Node value : " + node.value);
+            inOrderTraversing(node.right);
+        }
+    }
+
+    /*
+    * print left child
+    * print right child
+    * print root
+    */
+    private void postOrderTraversing(Node node) {
+        if (node != null) {
+            postOrderTraversing(node.left);
+            postOrderTraversing(node.right);
+            System.out.println("Node key : " + node.key + "; " + "Node value : " + node.value);
+        }
+    }
+
+    /*
+    * print root
+    * print left child
+    * print right child
+    */
+    private void preOrderTraversing(Node node) {
+        if (node != null) {
+            System.out.println("Node key : " + node.key + "; " + "Node value : " + node.value);
+            preOrderTraversing(node.left);
+            preOrderTraversing(node.right);
+        }
+    }
+
+    public void preOrderTraversing() {
+        System.out.println("\t Pre order traversing : ");
+        preOrderTraversing(root);
+    }
+
+    public void postOrderTraversing(){
+        System.out.println("\t Post order traversing : ");
+        postOrderTraversing(root);
+    }
+
+    public void inOrderTraversing(){
+        System.out.println("\t In order traversing : ");
+        inOrderTraversing(root);
     }
 
 
