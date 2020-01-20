@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Sorts {
 
     public static<T extends Comparable> void quicksort(T[] a){
-        Arrays.stream(a).anyMatch("A"::equals);
         int lo = 0;
         int hi = a.length - 1;
         quicksort(a, lo, hi);
