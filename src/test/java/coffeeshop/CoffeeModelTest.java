@@ -5,12 +5,12 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import project.coffeeshop.model.CoffeeModel;
-import project.coffeeshop.model.CoffeeTypes;
-import project.coffeeshop.model.entities.Arabica;
-import project.coffeeshop.model.entities.Coffee;
-import project.coffeeshop.model.entities.Liberica;
-import project.coffeeshop.model.entities.Robusta;
+import project.model.CoffeeModel;
+import project.model.CoffeeTypes;
+import project.model.entities.Arabica;
+import project.model.entities.Coffee;
+import project.model.entities.Liberica;
+import project.model.entities.Robusta;
 
 import java.util.Arrays;
 import java.util.List;
