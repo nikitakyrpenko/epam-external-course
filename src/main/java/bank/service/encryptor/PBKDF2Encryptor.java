@@ -31,22 +31,19 @@ public  class PBKDF2Encryptor implements Encryptor {
         this(DEFAULT_COST);
     }
 
-    public PBKDF2Encryptor(int cost)
-    {
+    public PBKDF2Encryptor(int cost) {
         iterations(cost);
         this.cost = cost;
         this.random = new SecureRandom();
     }
 
-    private static int iterations(int cost)
-    {
+    private static int iterations(int cost) {
         if ((cost < 0) || (cost > 30))
             throw new IllegalArgumentException("cost: " + cost);
         return 1 << cost;
     }
 
-    public String hash(char[] password)
-    {
+    public String hash(char[] password) {
         byte[] salt = new byte[SIZE / 8];
         random.nextBytes(salt);
         byte[] dk = pbkdf2(password, salt, 1 << cost);
@@ -57,8 +54,7 @@ public  class PBKDF2Encryptor implements Encryptor {
         return ID + cost + '$' + enc.encodeToString(hash);
     }
 
-    public boolean checkPassword(char[] password, String token)
-    {
+    public boolean checkPassword(char[] password, String token) {
         Matcher m = layout.matcher(token);
         if (!m.matches())
             throw new IllegalArgumentException("Invalid token format");
@@ -72,8 +68,7 @@ public  class PBKDF2Encryptor implements Encryptor {
         return zero == 0;
     }
 
-    private static byte[] pbkdf2(char[] password, byte[] salt, int iterations)
-    {
+    private static byte[] pbkdf2(char[] password, byte[] salt, int iterations) {
         KeySpec spec = new PBEKeySpec(password, salt, iterations, SIZE);
         try {
             SecretKeyFactory f = SecretKeyFactory.getInstance(ALGORITHM);

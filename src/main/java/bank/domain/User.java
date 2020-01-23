@@ -5,11 +5,15 @@ import java.util.Objects;
 
 public class User {
 
-    private final Integer id;
+    private  Integer id;
     private final String email;
     private final String password;
     private final String telephone;
     private final List<Account> accounts;
+
+    public void setId(Integer id){
+        this.id = id;
+    }
 
     public Integer getId() {
         return id;
@@ -46,7 +50,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", accounts=" + accounts +
-                '}';
+                '}'+"\n";
     }
 
     @Override

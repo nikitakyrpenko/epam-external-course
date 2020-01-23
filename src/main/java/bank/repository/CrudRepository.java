@@ -1,14 +1,17 @@
 package bank.repository;
 
-import java.util.List;
+import bank.repository.impl.Pageable;
+import java.util.Optional;
 
 public interface CrudRepository<E> {
 
-    void safe(E entity);
+    void save(E entity);
 
-    E findById(Integer id);
+    Optional<E> findById(Integer id);
 
-    List<E> findAll();
+    Pageable<E> findAll(Page page);
+
+    long count();
 
     void update(E entity);
 

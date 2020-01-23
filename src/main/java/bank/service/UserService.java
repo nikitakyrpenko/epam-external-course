@@ -1,19 +1,20 @@
 package bank.service;
 
+
 import bank.domain.User;
-import bank.repository.UserRepository;
 
-public class UserService {
+import java.util.List;
+import java.util.Optional;
 
-    private final UserRepository userRepository;
+public interface UserService {
 
-    public UserService(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+    boolean login(String email, String password);
 
-    public boolean login(String email, String password){
-       final User user = userRepository.findByEmail(email);
-       if (user == null) {return false;}
-       return user.getPassword().equals(password);
-    }
+    User register(User user);
+
+    List<User> findAll(int page);
+
+    Optional<User> findById(Integer id);
+
+    Optional<User> findByEmail(String email);
 }
