@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.findByEmail(email)
                 .map(User::getPassword)
-                .filter(pass -> passwordEncriptor.checkPassword(pass.toCharArray(), token))
+                .filter(pass -> passwordEncriptor.checkPassword(password.toCharArray(), token))
                 .isPresent();
     }
 

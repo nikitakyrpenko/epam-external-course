@@ -1,8 +1,9 @@
 package bank.validator;
 
 import bank.domain.User;
-import bank.exception.ValidateException;
+
 import bank.service.validator.UserValidator;
+import bank.service.validator.ValidateException;
 import bank.service.validator.Validator;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
